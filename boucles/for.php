@@ -13,7 +13,9 @@ echo '<br><br>';
 $couleurs = ['rouge', 'bleu', 'vert', 'orange', 'marron', 'noir', 'blanc'];
 //count est une fonction proposée par php qui sert à compter le nombre d'éléments d'un tableau
 echo '2.Les couleurs : <br>';
-for ($i = 0; $i < count($couleurs); ++$i) {
+
+$num = count($couleurs); // J'effectue le count en dehors de la boucle for pour éviter que php ne doive recalculer à chaque itération le nombre d'éléments du tableau
+for ($i = 0; $i < $num; ++$i) {
     echo $couleurs[$i].'<br>';
 }
 echo '<br><br>';
@@ -22,7 +24,9 @@ echo '<br><br>';
 //Parcourir un tableau depuis la fin
 echo '3.Les couleurs depuis la fin: <br>';
 //n'oubliez pas qu'un tableau commence à l'index 0. C'est pour ça qu'on commence notre $i à la taille du tableau moins 1
-for ($i = count($couleurs) - 1; $i >= 0; --$i) {
+
+$num = count($couleurs);
+for ($i = $num - 1; $i >= 0; --$i) {
     echo $couleurs[$i].'<br>';
 }
 echo '<br><br>';
@@ -37,7 +41,8 @@ $couleurs = array(
 );
 
 echo '4.Les nuances de couleurs : <br>';
-for ($i = 0; $i < count($couleurs); ++$i) {
+$num = count($couleurs);
+for ($i = 0; $i < $num; ++$i) {
     for ($j = 0; $j < count($couleurs[$i]); ++$j) {
         echo $couleurs[$i][$j].'<br>';
     }
